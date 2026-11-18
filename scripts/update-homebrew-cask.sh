@@ -9,7 +9,7 @@ CASK_FILE="$PROJECT_ROOT/Casks/railbench.rb"
 
 cd "$PROJECT_ROOT"
 
-APP_VERSION="${1:-$(node -p "require('$RAILBENCH_DIR/package.json').version" 2>/dev/null || echo "0.6.0")}"
+APP_VERSION="${1:-$(node -p "require('$RAILBENCH_DIR/package.json').version" 2>/dev/null || echo "0.6.1")}"
 echo "=== Updating Homebrew Cask for RAILbench v${APP_VERSION} ==="
 
 ARM64_ZIP="$RAILBENCH_DIR/release/railbench-${APP_VERSION}-mac-arm64.zip"

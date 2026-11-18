@@ -1,7 +1,7 @@
 cask "railbench" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.6.0"
+  version "0.6.1"
   sha256 arm:   "10f90871016b5eee5b8997b20f5fd441a41314d70465597b236e2469f07ea513",
          intel: "d4012e223e4bd86ec7654866f326317f4292ddcf1593c8bfa7a9f3332d85fde2"
 
