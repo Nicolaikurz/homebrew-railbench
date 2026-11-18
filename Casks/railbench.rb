@@ -16,7 +16,6 @@ cask "railbench" do
   end
 
   auto_updates false
-  depends_on macos: ">= :catalina"
 
   app "railbench.app"
 
