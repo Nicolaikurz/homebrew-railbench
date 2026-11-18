@@ -19,6 +19,18 @@ cask "railbench" do
 
   app "railbench.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/railbench.app"],
+                   sudo: false
+
+    on_arm do
+      system_command "/usr/bin/codesign",
+                     args: ["--force", "--deep", "--sign", "-", "#{appdir}/railbench.app"],
+                     sudo: false
+    end
+  end
+
   zap trash: [
     "~/Library/Application Support/railbench",
     "~/Library/Preferences/de.railbench.app.plist",
