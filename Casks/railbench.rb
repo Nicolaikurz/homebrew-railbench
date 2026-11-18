@@ -20,14 +20,14 @@ cask "railbench" do
   app "railbench.app"
 
   postflight_steps do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/railbench.app"],
-                   sudo: false
+    run "/usr/bin/xattr",
+        args: ["-cr", "{{appdir}}/railbench.app"]
+  end
 
-    on_arm do
-      system_command "/usr/bin/codesign",
-                     args: ["--force", "--deep", "--sign", "-", "#{appdir}/railbench.app"],
-                     sudo: false
+  on_arm do
+    postflight_steps do
+      run "/usr/bin/codesign",
+          args: ["--force", "--deep", "--sign", "-", "{{appdir}}/railbench.app"]
     end
   end
 
