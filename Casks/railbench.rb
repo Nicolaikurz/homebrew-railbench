@@ -19,7 +19,7 @@ cask "railbench" do
 
   app "railbench.app"
 
-  postflight do
+  postflight_steps do
     system_command "/usr/bin/xattr",
                    args: ["-cr", "#{appdir}/railbench.app"],
                    sudo: false
