@@ -19,15 +19,19 @@ cask "railbench" do
 
   app "railbench.app"
 
-  postflight_steps do
+  # Runs on the staged app (before it is moved to /Applications),
+  # so no appdir lookup is needed. chdir "." resolves to the staged path.
+  preflight_steps do
     run "/usr/bin/xattr",
-        args: ["-cr", "{{appdir}}/railbench.app"]
+        args:  ["-cr", "railbench.app"],
+        chdir: "."
   end
 
   on_arm do
-    postflight_steps do
+    preflight_steps do
       run "/usr/bin/codesign",
-          args: ["--force", "--deep", "--sign", "-", "{{appdir}}/railbench.app"]
+          args:  ["--force", "--deep", "--sign", "-", "railbench.app"],
+          chdir: "."
     end
   end
 

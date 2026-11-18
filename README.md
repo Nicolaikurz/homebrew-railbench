@@ -20,7 +20,7 @@ Supports Apple Silicon (arm64) and Intel (x64) Macs.
 
 ## Gatekeeper / code signing
 
-RAILbench builds are not notarized. The cask handles this automatically after install:
+RAILbench builds are not notarized. The cask handles this automatically during install, before the app is moved to `/Applications`:
 
 - removes the quarantine attributes (`xattr -cr`)
 - on Apple Silicon, re-applies an ad-hoc signature (`codesign --force --deep --sign -`)
