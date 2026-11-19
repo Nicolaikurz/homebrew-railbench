@@ -2,8 +2,8 @@ cask "railbench" do
   arch arm: "arm64", intel: "x64"
 
   version "0.6.1"
-  sha256 arm:   "3fffd53aecf263800850dd5065750943313d3589f2178ba0ff421ca6169780c5",
-         intel: "211398af8b63e7b65728bda038a033e9dd41e09f84b6bf595af158c1613a9a32"
+  sha256 arm:   "23dccb0cccc67081bd8cf9931d460cca76b9f6d7cb757c44699e83b3d9147efd",
+         intel: "8585379a8b42a2223ac80bf930bd2136b6225d243593b3487fa3808e60e56e40"
 
   url "https://github.com/Nicolaikurz/railbench/releases/download/v#{version}/railbench-#{version}-mac-#{arch}.zip"
   name "RAILbench"
